@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col h-full p-4 max-w-2xl mx-auto">
+  <div class="flex flex-col h-full w-full p-2">
     <!-- Progress -->
     <div class="flex-none flex flex-col items-center gap-2 mb-4">
       <input
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Pagination -->
-    <div class="flex-none join grid grid-cols-2 w-full bg-base-100 pt-2">
+    <div class="flex-none join grid grid-cols-2 gap-2 w-full bg-base-100">
       <button
         class="btn btn-primary join-item"
         :disabled="currentIndex === 0"

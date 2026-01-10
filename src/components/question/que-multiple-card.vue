@@ -1,5 +1,5 @@
 <template>
-  <div class="card bg-base-100 w-96 shadow-sm my-2">
+  <div class="card bg-base-100 w-full shadow-sm my-2">
     <div class="card-body">
       <div class="flex justify-between items-start">
         <h2 class="card-title">{{ question?.id }}</h2>

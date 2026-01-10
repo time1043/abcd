@@ -3,6 +3,27 @@
 
 /* @import './base.css'; */
 
+/* .bg-linear-gradient {
+  background-color: #ffffff;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #f3f4f6,
+    #f3f4f6 1px,
+    transparent 1px,
+    transparent 10px
+  );
+} */
+.bg-diagonal {
+  background-color: bg-base-100;
+  background-image: repeating-linear-gradient(
+    45deg,
+    #858586,
+    #858586 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
 /* #app {
   max-width: 1280px;
   margin: 0 auto;
