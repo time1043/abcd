@@ -40,6 +40,16 @@ export default defineConfig({
     Components({}),
     VitePWA({
       registerType: "autoUpdate",
+      includeAssets: ["ai-logo.png"],
+      manifest: {
+        name: "abcd",
+        short_name: "abcd",
+        display: "standalone",
+        icons: [{ src: "./ai-logo.png", sizes: "any", type: "image/png" }],
+      },
+      devOptions: {
+        enabled: true,
+      },
     }),
   ],
   resolve: {
