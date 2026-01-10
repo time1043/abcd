@@ -36,6 +36,7 @@ export default defineConfig({
       // dts: "./auto-imports.d.ts",
       dts: true,
       viteOptimizeDeps: true,
+      dirs: ["src/stores"],
     }),
     Components({}),
     VitePWA({

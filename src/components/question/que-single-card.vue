@@ -16,7 +16,7 @@
       </div>
 
       <div v-if="hasAnswered" class="card-actions justify-end mt-4">
-        <button class="btn btn-ghost btn-sm" @click="reset">reset</button>
+        <button class="btn btn-ghost btn-sm" @click="reset">Reset</button>
       </div>
     </div>
   </div>

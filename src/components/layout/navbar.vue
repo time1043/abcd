@@ -42,7 +42,7 @@
           </template>
         </ul>
       </div>
-      <RouterLink to="/" class="btn btn-ghost text-xl">ABCD</RouterLink>
+      <a href="/" class="btn btn-ghost text-xl">ABCD</a>
     </div>
 
     <!-- Desktop Menu -->
@@ -125,4 +125,10 @@ const userMenuConfig: NavItem[] = [
 ];
 </script>
 
-<style scoped></style>
+<style scoped>
+@reference "@/assets/main.css";
+
+:deep(.router-link-active) {
+  @apply bg-primary text-primary-content;
+}
+</style>
