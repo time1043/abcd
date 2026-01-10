@@ -22,5 +22,6 @@ declare module 'vue' {
     QuestionWrap: typeof import('./src/components/question/question-wrap.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ThemeController: typeof import('./src/components/theme-controller.vue')['default']
   }
 }

@@ -68,8 +68,10 @@
       </ul>
     </div>
 
-    <div class="navbar-end">
+    <div class="navbar-end gap-2">
       <!-- <a class="btn">Button</a> -->
+      <ThemeController />
+
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
           <div class="w-10 rounded-full">
