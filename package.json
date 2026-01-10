@@ -1,0 +1,52 @@
+{
+  "name": "abcd",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "env:gen": "sed 's/=.*/=/' .env > .env.example",
+    "sb:init": "supabase init",
+    "sb:login": "supabase login",
+    "sb:link": "dotenvx run -- supabase link --project-ref $SUPABASE_PROJECT_ID",
+    "sb:types": "supabase gen types typescript --linked > src/types/supabase.ts",
+    "db:migrate:new": "supabase migration new",
+    "db:push": "supabase db push",
+    "db:reset": "supabase db reset --linked",
+    "db:seed": "tsc --noEmit && dotenvx run -- tsx scripts/seed.ts",
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build"
+  },
+  "dependencies": {
+    "@dotenvx/dotenvx": "^1.51.4",
+    "@supabase/supabase-js": "^2.90.1",
+    "@tailwindcss/vite": "^4.1.18",
+    "abcd": "link:",
+    "daisyui": "^5.5.14",
+    "pinia": "^3.0.4",
+    "tailwindcss": "^4.1.18",
+    "tsx": "^4.21.0",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@tsconfig/node24": "^24.0.3",
+    "@types/node": "^24.10.4",
+    "@vitejs/plugin-vue": "^6.0.3",
+    "@vue/tsconfig": "^0.8.1",
+    "npm-run-all2": "^8.0.4",
+    "supabase": "^2.72.2",
+    "typescript": "~5.9.3",
+    "unplugin-auto-import": "^20.3.0",
+    "unplugin-vue-components": "^30.0.0",
+    "unplugin-vue-router": "^0.19.2",
+    "vite": "^7.3.0",
+    "vite-plugin-vue-devtools": "^8.0.5",
+    "vue-tsc": "^3.2.2"
+  }
+}
