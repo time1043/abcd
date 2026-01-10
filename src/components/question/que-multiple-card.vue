@@ -72,9 +72,10 @@ function buttonClass(index: number) {
 
   if (!hasAnswered.value) return isSelected ? "btn-neutral" : "btn-outline";
 
-  if (isCorrect) return "btn-primary";
-  else if (isSelected) return "btn-error";
-  else return "btn-ghost";
+  if (isSelected && isCorrect) return "btn-outline btn-primary";
+  if (isSelected && !isCorrect) return "btn-error";
+  if (!isSelected && isCorrect) return "btn-primary";
+  if (!isSelected && !isCorrect) return "btn-ghost";
 }
 
 function reset() {

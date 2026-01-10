@@ -18,6 +18,7 @@ const prosp = defineProps<{
 
 function onClick(n: number) {
   useQuestionStore().currentIndex = n - 1;
+  useDrawerStore().toggle();
 }
 </script>
 

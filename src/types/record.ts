@@ -1,6 +1,6 @@
 export type RecordQuestion = {
   id: number;
-  answers: string[];
+  userAnswers: string[];
 };
 
 export type RecordBucket = {

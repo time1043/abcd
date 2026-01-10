@@ -23,7 +23,12 @@
 
     <!-- Map -->
     <div class="drawer">
-      <input id="my-drawer-1" type="checkbox" class="drawer-toggle" />
+      <input
+        id="my-drawer-1"
+        type="checkbox"
+        class="drawer-toggle"
+        v-model="isOpen"
+      />
       <div class="drawer-content">
         <!-- Page content here -->
         <div class="fab bottom-20">
@@ -70,6 +75,9 @@
 <script setup lang="ts">
 import type { Question } from "@/types/question";
 import QuestionMap from "./question-map.vue";
+import { useDrawerStore } from "@/stores/ui/drawer";
+
+const { isOpen } = storeToRefs(useDrawerStore());
 
 const props = defineProps<{
   questions: Question[];

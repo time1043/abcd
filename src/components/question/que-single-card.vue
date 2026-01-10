@@ -32,8 +32,7 @@ const props = defineProps<{
 // 0,1,2,3
 const selectedIndex = ref<number | null>(null);
 const hasAnswered = computed(() => selectedIndex.value !== null);
-// "A" -> 0
-// const correctIndex = props.question.answer.charCodeAt(0) - 65;
+// ["A"] -> [0]
 const correctIndex = computed(
   () => props.question.answers[0]!.charCodeAt(0) - 65
 );
@@ -41,6 +40,14 @@ const correctIndex = computed(
 function select(index: number) {
   if (selectedIndex.value !== null) return;
   selectedIndex.value = index;
+
+  // If the user selected the correct answer
+  // then move to the next question after 1 second
+  if (selectedIndex.value === correctIndex.value) {
+    setTimeout(() => {
+      useQuestionStore().currentIndex++;
+    }, 1000);
+  }
 }
 
 function buttonClass(index: number) {
