@@ -8,6 +8,7 @@
   "[sql]": {
     "editor.formatOnSave": false
   },
+  "css.customData": [".vscode/tailwind.json"],
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "url-list.json": "url-list-*",
