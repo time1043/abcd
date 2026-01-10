@@ -46,6 +46,7 @@
     "unplugin-vue-components": "^30.0.0",
     "unplugin-vue-router": "^0.19.2",
     "vite": "^7.3.0",
+    "vite-plugin-pwa": "^1.2.0",
     "vite-plugin-vue-devtools": "^8.0.5",
     "vue-tsc": "^3.2.2"
   }
