@@ -1,7 +1,9 @@
-export type Record = {
+export type RecordQuestion = {
+  id: number;
+  answers: string[];
+};
+
+export type RecordBucket = {
   bucketId: string;
-  details: {
-    id: number;
-    answers: string[];
-  }[];
+  details: RecordQuestion[];
 };

@@ -23,24 +23,15 @@
 </template>
 
 <script setup lang="ts">
+import type { Question } from "@/types/question";
+
 const props = defineProps<{
-  question: {
-    id: number;
-    description: string;
-    choices: string[];
-    answers: string[]; // fake: ["A"]; real: "A"
-  };
+  question: Question;
 }>();
 
 // 0,1,2,3
 const selectedIndex = ref<number | null>(null);
 const hasAnswered = computed(() => selectedIndex.value !== null);
-// // A,B,C,D
-// const selectedLetter = computed(() =>
-//   selectedIndex.value !== null
-//     ? String.fromCharCode(65 + selectedIndex.value)
-//     : null
-// );
 // "A" -> 0
 // const correctIndex = props.question.answer.charCodeAt(0) - 65;
 const correctIndex = computed(

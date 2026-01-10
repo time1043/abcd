@@ -16,13 +16,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Question } from "@/types/question";
+
 const props = defineProps<{
-  questions: {
-    id: number;
-    description: string;
-    choices: string[];
-    answers: string[];
-  }[];
+  questions: Question[];
 }>();
 </script>
 

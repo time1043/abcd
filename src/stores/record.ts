@@ -1,7 +1,7 @@
-import type { Record } from "@/types/record";
+import type { RecordBucket } from "@/types/record";
 
 export const useRecordStore = defineStore("record", () => {
-  const records = ref<Record | null>(null);
+  const records = ref<RecordBucket | null>(null);
 
   async function setRecord() {
     // records.value = null;

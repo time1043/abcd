@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap gap-2">
+  <div class="grid grid-cols-5 gap-2">
     <div
       v-for="n in count"
       :key="n"

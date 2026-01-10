@@ -2,11 +2,6 @@
   <div class="flex flex-col h-full p-4 max-w-2xl mx-auto">
     <!-- Progress -->
     <div class="flex-none flex flex-col items-center gap-2 mb-4">
-      <!-- <progress
-        class="progress progress-primary w-full"
-        :value="currentIndex"
-        :max="questions.length - 1"
-      /> -->
       <input
         type="range"
         min="0"
@@ -14,7 +9,8 @@
         v-model.number="currentIndex"
         class="range range-primary w-full"
       />
-      <div class="text-sm font-medium">
+      <div class="w-full flex justify-between">
+        <Countdown :seconds="60 * 60" />
         {{ currentIndex + 1 }} / {{ questions.length }}
       </div>
     </div>
@@ -72,15 +68,11 @@
 </template>
 
 <script setup lang="ts">
+import type { Question } from "@/types/question";
 import QuestionMap from "./question-map.vue";
 
 const props = defineProps<{
-  questions: {
-    id: number;
-    description: string;
-    choices: string[];
-    answers: string[];
-  }[];
+  questions: Question[];
 }>();
 
 const currentIndex = ref(0);

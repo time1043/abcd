@@ -44,13 +44,6 @@ declare module 'vue-router/auto-routes' {
       { id: ParamValue<false> },
       | never
     >,
-    '/question/': RouteRecordInfo<
-      '/question/',
-      '/question',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/record/': RouteRecordInfo<
       '/record/',
       '/record',
@@ -86,12 +79,6 @@ declare module 'vue-router/auto-routes' {
     'src/pages/bucket/[id].vue': {
       routes:
         | '/bucket/[id]'
-      views:
-        | never
-    }
-    'src/pages/question/index.vue': {
-      routes:
-        | '/question/'
       views:
         | never
     }

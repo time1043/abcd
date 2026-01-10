@@ -36,13 +36,10 @@
 </template>
 
 <script setup lang="ts">
+import type { Question } from "@/types/question";
+
 const props = defineProps<{
-  question: {
-    id: number;
-    description: string;
-    choices: string[];
-    answers: string[]; // ["A", "C"]
-  };
+  question: Question;
 }>();
 
 // [0, 2]

@@ -13,9 +13,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     BucketList: typeof import('./src/components/bucket/bucket-list.vue')['default']
     BucketListItem: typeof import('./src/components/bucket/bucket-list-item.vue')['default']
-    copy: typeof import('./src/components/bucket/bucket-list copy.vue')['default']
+    Countdown: typeof import('./src/components/countdown.vue')['default']
     Navbar: typeof import('./src/components/layout/navbar.vue')['default']
-    Progress: typeof import('./src/components/progress.vue')['default']
     QueMultipleCard: typeof import('./src/components/question/que-multiple-card.vue')['default']
     QueSingleCard: typeof import('./src/components/question/que-single-card.vue')['default']
     Question: typeof import('./src/components/question/question.vue')['default']
