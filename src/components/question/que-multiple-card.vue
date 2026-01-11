@@ -42,9 +42,19 @@ const props = defineProps<{
   question: Question;
 }>();
 
+const recordStore = useRecordStore();
+
 // [0, 2]
-const selectedIndices = ref<number[]>([]);
-const hasAnswered = ref(false);
+// const selectedIndices = ref<number[]>([]);
+// const hasAnswered = ref(false);
+const savedAnswers = computed(
+  () => recordStore.userAnswers[props.question.id] || []
+);
+const selectedIndices = ref<number[]>([...savedAnswers.value]);
+const hasAnswered = computed(
+  () => !!recordStore.submittedIds[props.question.id]
+);
+
 // ["A", "C"] -> [0, 2]
 const correctIndices = computed(() =>
   props.question.answers.map((letter) => letter.charCodeAt(0) - 65)
@@ -63,7 +73,10 @@ function toggleSelect(index: number) {
 
 function submit() {
   // Allow submit when at least one option is selected
-  if (selectedIndices.value.length > 0) hasAnswered.value = true;
+  if (selectedIndices.value.length === 0) return;
+
+  // hasAnswered.value = true;
+  recordStore.saveAnswer(props.question.id, selectedIndices.value, true);
 }
 
 function buttonClass(index: number) {
@@ -80,6 +93,7 @@ function buttonClass(index: number) {
 
 function reset() {
   selectedIndices.value = [];
-  hasAnswered.value = false;
+  // hasAnswered.value = false;
+  recordStore.resetAnswer(props.question.id);
 }
 </script>

@@ -3,3 +3,7 @@ export const useQuestionStore = defineStore("question", () => {
 
   return { currentIndex };
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useQuestionStore, import.meta.hot));
+}

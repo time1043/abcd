@@ -29,8 +29,16 @@ const props = defineProps<{
   question: Question;
 }>();
 
+const recordStore = useRecordStore();
+
 // 0,1,2,3
-const selectedIndex = ref<number | null>(null);
+// const selectedIndex = ref<number | null>(null);
+const selectedIndex = computed({
+  get: () => recordStore.userAnswers[props.question.id]?.[0] ?? null,
+  set: (val) => {
+    if (val !== null) recordStore.saveAnswer(props.question.id, [val], true);
+  },
+});
 const hasAnswered = computed(() => selectedIndex.value !== null);
 // ["A"] -> [0]
 const correctIndex = computed(
@@ -62,7 +70,8 @@ function buttonClass(index: number) {
 }
 
 function reset() {
-  selectedIndex.value = null;
+  // selectedIndex.value = null;
+  recordStore.resetAnswer(props.question.id);
 }
 </script>
 
