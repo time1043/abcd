@@ -4,7 +4,7 @@
       <div class="w-10 rounded-full">
         <img
           alt="Tailwind CSS Navbar component"
-          src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+          src="https://avatars.githubusercontent.com/u/132178516?s=400&u=9c885366fc78ce8106419fb8751e4cc1654f4e70&v=4"
         />
       </div>
     </div>

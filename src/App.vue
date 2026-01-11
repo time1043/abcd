@@ -4,6 +4,13 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { getSession } from "./pages/auth/data";
+
+onMounted(async () => {
+  const { data } = await getSession();
+  useAccountStore().setAuth(data.session);
+});
+</script>
 
 <style scoped></style>

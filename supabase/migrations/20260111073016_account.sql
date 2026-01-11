@@ -1,0 +1,13 @@
+TRUNCATE TABLE auth.users CASCADE;
+
+DROP TABLE IF EXISTS profiles;
+CREATE TABLE accounts (
+    id UUID REFERENCES auth.users ON DELETE CASCADE NOT NULL,
+    created_at TIMESTAMPTZ DEFAULT NOW () NOT NULL,
+    username TEXT UNIQUE NOT NULL,
+    full_name TEXT DEFAULT NULL,
+    bio TEXT DEFAULT NULL,
+    mode TEXT DEFAULT 'dark' NOT NULL,
+    avatar_url TEXT DEFAULT NULL,
+    PRIMARY KEY (id)
+);

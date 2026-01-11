@@ -58,13 +58,14 @@ declare global {
   const toValue: typeof import('vue').toValue
   const triggerRef: typeof import('vue').triggerRef
   const unref: typeof import('vue').unref
+  const useAccountStore: typeof import('./src/stores/account').useAccountStore
   const useAttrs: typeof import('vue').useAttrs
   const useCounterStore: typeof import('./src/stores/counter').useCounterStore
   const useCssModule: typeof import('vue').useCssModule
   const useCssVars: typeof import('vue').useCssVars
   const useDrawerStore: typeof import('./src/stores/ui/drawer').useDrawerStore
   const useId: typeof import('vue').useId
-  const useLink: typeof import('vue-router').useLink
+  const useLink: typeof import("vue-router").useLink
   const useModel: typeof import('vue').useModel
   const useQuestionStore: typeof import('./src/stores/question').useQuestionStore
   const useRecordStore: typeof import('./src/stores/record').useRecordStore
@@ -72,7 +73,7 @@ declare global {
   const useRouter: typeof import('vue-router').useRouter
   const useSlots: typeof import('vue').useSlots
   const useTemplateRef: typeof import('vue').useTemplateRef
-  const useUserStore: typeof import('./src/stores/user').useUserStore
+  const useUserStore: typeof import("./src/stores/account").useAccountStore
   const watch: typeof import('vue').watch
   const watchEffect: typeof import('vue').watchEffect
   const watchPostEffect: typeof import('vue').watchPostEffect

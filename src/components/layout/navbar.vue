@@ -73,8 +73,8 @@
       <ThemeController />
 
       <div class="dropdown dropdown-end">
-        <!-- <Avatar /> -->
-        <RouterLink to="/auth/signin" v-if="true">
+        <Avatar v-if="isAuthed" />
+        <RouterLink to="/auth/signin" v-if="!isAuthed">
           <button class="btn">Login</button>
         </RouterLink>
       </div>
@@ -84,6 +84,8 @@
 
 <script setup lang="ts">
 import { navConfig } from "./data";
+
+const { isAuthed } = storeToRefs(useAccountStore());
 </script>
 
 <style scoped>

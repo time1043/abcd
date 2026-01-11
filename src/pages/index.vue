@@ -8,7 +8,7 @@
       <div class="flex flex-col items-center lg:items-start">
         <Logo title="ABCD ▶▶︎" />
         <p class="py-6">This project is a disposable exam-cramming tool.</p>
-        <RouterLink to="/home/bucket">
+        <RouterLink to="/home/stat">
           <button class="btn btn-primary">Get Started</button>
         </RouterLink>
       </div>
