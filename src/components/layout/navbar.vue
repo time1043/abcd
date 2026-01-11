@@ -42,7 +42,7 @@
           </template>
         </ul>
       </div>
-      <a href="/" class="btn btn-ghost text-xl">ABCD</a>
+      <Logo title="ABCD" />
     </div>
 
     <!-- Desktop Menu -->
@@ -73,56 +73,17 @@
       <ThemeController />
 
       <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-          <div class="w-10 rounded-full">
-            <img
-              alt="Tailwind CSS Navbar component"
-              src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-            />
-          </div>
-        </div>
-        <ul
-          tabindex="-1"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-        >
-          <li v-for="item in userMenuConfig" :key="item.name">
-            <RouterLink :to="item.path" class="justify-between">
-              {{ item.name }}
-              <span v-if="item.badge" class="badge">{{ item.badge }}</span>
-            </RouterLink>
-          </li>
-        </ul>
+        <!-- <Avatar /> -->
+        <RouterLink to="/auth/signin" v-if="true">
+          <button class="btn">Login</button>
+        </RouterLink>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-interface NavItem {
-  name: string;
-  path: string;
-  children?: NavItem[];
-  badge?: string;
-}
-
-const navConfig: NavItem[] = [
-  { name: "Buckets", path: "/bucket" },
-  { name: "Records", path: "/record" },
-  // {
-  //   name: "Parent",
-  //   path: "/parent",
-  //   children: [
-  //     { name: "Submenu 1", path: "/parent/sub1" },
-  //     { name: "Submenu 2", path: "/parent/sub2" },
-  //   ],
-  // },
-];
-
-const userMenuConfig: NavItem[] = [
-  // { name: "Profile", path: "/profile", badge: "New" },
-  // { name: "Settings", path: "/settings" },
-  { name: "Logout", path: "#" },
-];
+import { navConfig } from "./data";
 </script>
 
 <style scoped>

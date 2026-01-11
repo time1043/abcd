@@ -1,4 +1,6 @@
-<template>record index</template>
+<template>
+  <div>record index</div>
+</template>
 
 <script setup lang="ts"></script>
 

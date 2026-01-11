@@ -11,9 +11,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Avatar: typeof import('./src/components/layout/avatar.vue')['default']
     BucketList: typeof import('./src/components/bucket/bucket-list.vue')['default']
     BucketListItem: typeof import('./src/components/bucket/bucket-list-item.vue')['default']
+    copy: typeof import('./src/components/auth/signin-form copy.vue')['default']
     Countdown: typeof import('./src/components/countdown.vue')['default']
+    Logo: typeof import('./src/components/logo.vue')['default']
     Navbar: typeof import('./src/components/layout/navbar.vue')['default']
     QueMultipleCard: typeof import('./src/components/question/que-multiple-card.vue')['default']
     QueSingleCard: typeof import('./src/components/question/que-single-card.vue')['default']
@@ -22,6 +25,8 @@ declare module 'vue' {
     QuestionWrap: typeof import('./src/components/question/question-wrap.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SigninForm: typeof import('./src/components/auth/signin-form.vue')['default']
+    SignupForm: typeof import('./src/components/auth/signup-form.vue')['default']
     ThemeController: typeof import('./src/components/theme-controller.vue')['default']
   }
 }

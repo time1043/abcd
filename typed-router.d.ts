@@ -30,23 +30,54 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/bucket/': RouteRecordInfo<
-      '/bucket/',
-      '/bucket',
+    '/auth': RouteRecordInfo<
+      '/auth',
+      '/auth',
+      Record<never, never>,
+      Record<never, never>,
+      | '/auth/signin'
+      | '/auth/signup'
+    >,
+    '/auth/signin': RouteRecordInfo<
+      '/auth/signin',
+      '/auth/signin',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/bucket/[id]': RouteRecordInfo<
-      '/bucket/[id]',
-      '/bucket/:id',
+    '/auth/signup': RouteRecordInfo<
+      '/auth/signup',
+      '/auth/signup',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/home': RouteRecordInfo<
+      '/home',
+      '/home',
+      Record<never, never>,
+      Record<never, never>,
+      | '/home/bucket/'
+      | '/home/bucket/[id]'
+      | '/home/record/'
+    >,
+    '/home/bucket/': RouteRecordInfo<
+      '/home/bucket/',
+      '/home/bucket',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/home/bucket/[id]': RouteRecordInfo<
+      '/home/bucket/[id]',
+      '/home/bucket/:id',
       { id: ParamValue<true> },
       { id: ParamValue<false> },
       | never
     >,
-    '/record/': RouteRecordInfo<
-      '/record/',
-      '/record',
+    '/home/record/': RouteRecordInfo<
+      '/home/record/',
+      '/home/record',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -70,21 +101,50 @@ declare module 'vue-router/auto-routes' {
       views:
         | never
     }
-    'src/pages/bucket/index.vue': {
+    'src/pages/auth.vue': {
       routes:
-        | '/bucket/'
+        | '/auth'
+        | '/auth/signin'
+        | '/auth/signup'
+      views:
+        | 'default'
+    }
+    'src/pages/auth/signin.vue': {
+      routes:
+        | '/auth/signin'
       views:
         | never
     }
-    'src/pages/bucket/[id].vue': {
+    'src/pages/auth/signup.vue': {
       routes:
-        | '/bucket/[id]'
+        | '/auth/signup'
       views:
         | never
     }
-    'src/pages/record/index.vue': {
+    'src/pages/home.vue': {
       routes:
-        | '/record/'
+        | '/home'
+        | '/home/bucket/'
+        | '/home/bucket/[id]'
+        | '/home/record/'
+      views:
+        | 'default'
+    }
+    'src/pages/home/bucket/index.vue': {
+      routes:
+        | '/home/bucket/'
+      views:
+        | never
+    }
+    'src/pages/home/bucket/[id].vue': {
+      routes:
+        | '/home/bucket/[id]'
+      views:
+        | never
+    }
+    'src/pages/home/record/index.vue': {
+      routes:
+        | '/home/record/'
       views:
         | never
     }

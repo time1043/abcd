@@ -8,7 +8,7 @@ import { bucketQuestionsQuery } from "./data";
 
 const questions = ref<Question[]>([]);
 
-const route = useRoute("/bucket/[id]");
+const route = useRoute("/home/bucket/[id]");
 const bucketId = computed(() => route.params.id);
 
 async function getQuestions() {
