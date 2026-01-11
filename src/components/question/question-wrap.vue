@@ -5,7 +5,7 @@
       <input
         type="range"
         min="0"
-        :max="questions.length - 1"
+        :max="Math.max(questions.length - 1, currentIndex)"
         v-model.number="currentIndex"
         class="range range-primary w-full"
       />
@@ -47,7 +47,7 @@
           class="drawer-overlay"
         />
         <ul class="menu bg-base-200 min-h-full w-80 p-4">
-          <QuestionMap :count="questions.length" />
+          <QuestionMap :questions="questions" />
         </ul>
       </div>
     </div>

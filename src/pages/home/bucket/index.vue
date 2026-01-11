@@ -9,7 +9,7 @@ const buckets = ref<BuckerQuery>([]);
 
 async function getBucket() {
   const { data, error } = await bucketQuery;
-  console.log({ data, error });
+  // console.log({ data, error });
   if (error) throw new Error();
 
   buckets.value = data;

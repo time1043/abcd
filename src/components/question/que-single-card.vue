@@ -36,7 +36,10 @@ const recordStore = useRecordStore();
 const selectedIndex = computed({
   get: () => recordStore.userAnswers[props.question.id]?.[0] ?? null,
   set: (val) => {
-    if (val !== null) recordStore.saveAnswer(props.question.id, [val], true);
+    if (val !== null) {
+      const isCorrect = val === correctIndex.value;
+      recordStore.saveAnswer(props.question.id, [val], true, isCorrect);
+    }
   },
 });
 const hasAnswered = computed(() => selectedIndex.value !== null);

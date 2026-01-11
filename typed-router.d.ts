@@ -60,6 +60,7 @@ declare module 'vue-router/auto-routes' {
       | '/home/bucket/'
       | '/home/bucket/[id]'
       | '/home/record/'
+      | '/home/stat/'
     >,
     '/home/bucket/': RouteRecordInfo<
       '/home/bucket/',
@@ -78,6 +79,13 @@ declare module 'vue-router/auto-routes' {
     '/home/record/': RouteRecordInfo<
       '/home/record/',
       '/home/record',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/home/stat/': RouteRecordInfo<
+      '/home/stat/',
+      '/home/stat',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -127,6 +135,7 @@ declare module 'vue-router/auto-routes' {
         | '/home/bucket/'
         | '/home/bucket/[id]'
         | '/home/record/'
+        | '/home/stat/'
       views:
         | 'default'
     }
@@ -145,6 +154,12 @@ declare module 'vue-router/auto-routes' {
     'src/pages/home/record/index.vue': {
       routes:
         | '/home/record/'
+      views:
+        | never
+    }
+    'src/pages/home/stat/index.vue': {
+      routes:
+        | '/home/stat/'
       views:
         | never
     }

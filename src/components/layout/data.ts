@@ -6,6 +6,7 @@ interface NavItem {
 }
 
 export const navConfig: NavItem[] = [
+  { name: "Home", path: "/home/stat" },
   { name: "Buckets", path: "/home/bucket" },
   { name: "Records", path: "/home/record" },
   // {

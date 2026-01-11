@@ -13,7 +13,7 @@ const bucketId = computed(() => route.params.id);
 
 async function getQuestions() {
   const { data, error } = await bucketQuestionsQuery(bucketId.value);
-  console.log({ data, error });
+  // console.log({ data, error });
   if (error) throw new Error();
   questions.value = data as Question[];
 }

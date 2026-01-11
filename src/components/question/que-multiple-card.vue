@@ -75,8 +75,19 @@ function submit() {
   // Allow submit when at least one option is selected
   if (selectedIndices.value.length === 0) return;
 
-  // hasAnswered.value = true;
-  recordStore.saveAnswer(props.question.id, selectedIndices.value, true);
+  // Check if all selected indices match the correct indices
+  const sorted = [...selectedIndices.value].sort();
+  const correctSorted = [...correctIndices.value].sort();
+  const isCorrect =
+    sorted.length === correctSorted.length &&
+    sorted.every((v, i) => v === correctSorted[i]);
+
+  recordStore.saveAnswer(
+    props.question.id,
+    selectedIndices.value,
+    true,
+    isCorrect
+  );
 }
 
 function buttonClass(index: number) {

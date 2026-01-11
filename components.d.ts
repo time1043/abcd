@@ -27,6 +27,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     SigninForm: typeof import('./src/components/auth/signin-form.vue')['default']
     SignupForm: typeof import('./src/components/auth/signup-form.vue')['default']
+    Stat: typeof import('./src/components/stat/stat.vue')['default']
     ThemeController: typeof import('./src/components/theme-controller.vue')['default']
   }
 }
