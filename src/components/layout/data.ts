@@ -20,7 +20,6 @@ export const navConfig: NavItem[] = [
 ];
 
 export const userMenuConfig: NavItem[] = [
-  // { name: "Profile", path: "/profile", badge: "New" },
+  { name: "Account", path: "/auth/account", badge: "TODO" },
   // { name: "Settings", path: "/settings" },
-  { name: "Logout", path: "/auth/signin" },
 ];

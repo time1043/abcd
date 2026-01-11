@@ -11,6 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    Account: typeof import('./src/components/auth/account.vue')['default']
     Avatar: typeof import('./src/components/layout/avatar.vue')['default']
     BucketList: typeof import('./src/components/bucket/bucket-list.vue')['default']
     BucketListItem: typeof import('./src/components/bucket/bucket-list-item.vue')['default']

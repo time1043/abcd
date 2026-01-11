@@ -15,15 +15,26 @@
       <li v-for="item in userMenuConfig" :key="item.name">
         <RouterLink :to="item.path" class="justify-between">
           {{ item.name }}
-          <span v-if="item.badge" class="badge">{{ item.badge }}</span>
+          <span v-if="item.badge" class="badge">
+            {{ item.badge }}
+          </span>
         </RouterLink>
+        <span @click="logout">Logout</span>
       </li>
     </ul>
   </div>
 </template>
 
 <script setup lang="ts">
+import { signOut } from "@/pages/auth/data";
 import { userMenuConfig } from "./data";
+
+const router = useRouter();
+
+async function logout() {
+  await signOut();
+  router.push("/auth/signin");
+}
 </script>
 
 <style scoped></style>
