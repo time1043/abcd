@@ -44,6 +44,7 @@ const props = defineProps<{
 const router = useRouter();
 
 function onClick() {
+  useRecordStore().newOne(props.bucket.id);
   router.push(`/home/bucket/${props.bucket.id}`);
 }
 </script>

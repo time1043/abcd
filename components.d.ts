@@ -11,7 +11,7 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    Account: typeof import('./src/components/auth/account.vue')['default']
+    Account: typeof import('./src/pages/auth/account.vue')['default']
     Avatar: typeof import('./src/components/layout/avatar.vue')['default']
     BucketList: typeof import('./src/components/bucket/bucket-list.vue')['default']
     BucketListItem: typeof import('./src/components/bucket/bucket-list-item.vue')['default']
@@ -24,6 +24,8 @@ declare module 'vue' {
     Question: typeof import('./src/components/question/question.vue')['default']
     QuestionMap: typeof import('./src/components/question/question-map.vue')['default']
     QuestionWrap: typeof import('./src/components/question/question-wrap.vue')['default']
+    RecordRaw: typeof import('./src/components/record/record-raw.vue')['default']
+    RecordTable: typeof import('./src/components/record/record-table.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SigninForm: typeof import('./src/components/auth/signin-form.vue')['default']

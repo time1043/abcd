@@ -165,30 +165,30 @@ export type Database = {
           created_at: string | null
           details: Json
           id: string
-          score: number | null
+          score: number
           status: string | null
           updated_at: string | null
-          user_id: number | null
+          user_id: string | null
         }
         Insert: {
           bucket_id?: string | null
           created_at?: string | null
           details: Json
           id?: string
-          score?: number | null
+          score?: number
           status?: string | null
           updated_at?: string | null
-          user_id?: number | null
+          user_id?: string | null
         }
         Update: {
           bucket_id?: string | null
           created_at?: string | null
           details?: Json
           id?: string
-          score?: number | null
+          score?: number
           status?: string | null
           updated_at?: string | null
-          user_id?: number | null
+          user_id?: string | null
         }
         Relationships: [
           {
@@ -233,6 +233,7 @@ export type Database = {
         | "SQL_PROGRAMMING"
         | "PROGRAMMING"
         | "SUBJECTIVE"
+      record_status: "IN_PROGRESS" | "COMPLETED"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -372,6 +373,7 @@ export const Constants = {
         "PROGRAMMING",
         "SUBJECTIVE",
       ],
+      record_status: ["IN_PROGRESS", "COMPLETED"],
     },
   },
 } as const

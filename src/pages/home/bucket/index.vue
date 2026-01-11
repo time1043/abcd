@@ -3,12 +3,12 @@
 </template>
 
 <script setup lang="ts">
-import { bucketQuery, type BuckerQuery } from "./data";
+import { bucketsQuery, type BuckersQuery } from "./data";
 
-const buckets = ref<BuckerQuery>([]);
+const buckets = ref<BuckersQuery>([]);
 
-async function getBucket() {
-  const { data, error } = await bucketQuery;
+async function getBuckets() {
+  const { data, error } = await bucketsQuery;
   // console.log({ data, error });
   if (error) throw error;
 
@@ -16,7 +16,7 @@ async function getBucket() {
 }
 
 onMounted(async () => {
-  await getBucket();
+  await getBuckets();
 });
 </script>
 

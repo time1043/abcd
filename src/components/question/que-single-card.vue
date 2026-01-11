@@ -38,7 +38,7 @@ const selectedIndex = computed({
   set: (val) => {
     if (val !== null) {
       const isCorrect = val === correctIndex.value;
-      recordStore.saveAnswer(props.question.id, [val], true, isCorrect);
+      recordStore.saveAnswer(props.question.id, [val], true);
     }
   },
 });
@@ -56,7 +56,7 @@ function select(index: number) {
   // then move to the next question after 1 second
   if (selectedIndex.value === correctIndex.value) {
     setTimeout(() => {
-      useQuestionStore().currentIndex++;
+      useRecordStore().currentIndex++;
     }, 1000);
   }
 }

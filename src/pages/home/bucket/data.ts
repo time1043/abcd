@@ -1,11 +1,11 @@
 import { supabase } from "@/lib/supabase-client";
 import type { QueryData } from "@supabase/supabase-js";
 
-export const bucketQuery = supabase
+export const bucketsQuery = supabase
   .from("buckets")
   .select(`id, name`)
   .order("id", { ascending: true });
-export type BuckerQuery = QueryData<typeof bucketQuery>;
+export type BuckersQuery = QueryData<typeof bucketsQuery>;
 
 // export const bucketQuestionsQuery = (bucketId: number) =>
 //   supabase

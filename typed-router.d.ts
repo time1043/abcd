@@ -35,8 +35,16 @@ declare module 'vue-router/auto-routes' {
       '/auth',
       Record<never, never>,
       Record<never, never>,
+      | '/auth/account'
       | '/auth/signin'
       | '/auth/signup'
+    >,
+    '/auth/account': RouteRecordInfo<
+      '/auth/account',
+      '/auth/account',
+      Record<never, never>,
+      Record<never, never>,
+      | never
     >,
     '/auth/signin': RouteRecordInfo<
       '/auth/signin',
@@ -112,10 +120,17 @@ declare module 'vue-router/auto-routes' {
     'src/pages/auth.vue': {
       routes:
         | '/auth'
+        | '/auth/account'
         | '/auth/signin'
         | '/auth/signup'
       views:
         | 'default'
+    }
+    'src/pages/auth/account.vue': {
+      routes:
+        | '/auth/account'
+      views:
+        | never
     }
     'src/pages/auth/signin.vue': {
       routes:

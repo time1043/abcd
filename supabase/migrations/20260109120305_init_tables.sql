@@ -9,7 +9,6 @@ CREATE TYPE problem_type AS ENUM (
     'SUBJECTIVE'
 );
 
-
 DROP TABLE IF EXISTS questions;
 CREATE TABLE questions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -54,18 +53,20 @@ FROM bucket_questions bq
 JOIN questions q ON q.id = bq.question_id;
 
 
+DROP TYPE IF EXISTS record_status;
+CREATE TYPE record_status AS ENUM ('IN_PROGRESS', 'COMPLETED');
+
 DROP TABLE IF EXISTS records;
 CREATE TABLE records (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    bucket_id UUID REFERENCES buckets(id),  -- 1:1
-    user_id BIGINT, 
-    score DECIMAL(5, 2),
-    status VARCHAR(20) DEFAULT 'COMPLETED', -- IN_PROGRESS, COMPLETED
-    details JSONB NOT NULL
+    bucket_id UUID REFERENCES buckets(id) ON DELETE CASCADE, -- 1:1
+    user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,  -- 1:1
+    score DECIMAL(5, 2) NOT NULL DEFAULT -1,
+    status record_status DEFAULT 'IN_PROGRESS',
+    details JSONB NOT NULL DEFAULT '{}'::jsonb
 );
-DROP INDEX IF EXISTS idx_records_bucket_id;
-DROP INDEX IF EXISTS idx_records_user_id;
-CREATE INDEX idx_records_bucket_id ON records(bucket_id);
-CREATE INDEX idx_records_user_id ON records(user_id);
+
+DROP INDEX IF EXISTS idx_records_user_bucket;
+CREATE INDEX idx_records_user_bucket ON records(user_id, bucket_id);

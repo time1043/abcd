@@ -82,12 +82,7 @@ function submit() {
     sorted.length === correctSorted.length &&
     sorted.every((v, i) => v === correctSorted[i]);
 
-  recordStore.saveAnswer(
-    props.question.id,
-    selectedIndices.value,
-    true,
-    isCorrect
-  );
+  recordStore.saveAnswer(props.question.id, selectedIndices.value, true);
 }
 
 function buttonClass(index: number) {

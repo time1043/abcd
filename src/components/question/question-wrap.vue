@@ -84,7 +84,7 @@ const props = defineProps<{
 }>();
 
 // const currentIndex = ref(0);
-const { currentIndex } = storeToRefs(useQuestionStore());
+const { currentIndex } = storeToRefs(useRecordStore());
 const currentQuestion = computed(() => {
   return props.questions[currentIndex.value];
 });
