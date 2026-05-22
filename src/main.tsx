@@ -1,4 +1,5 @@
 import { RouterProvider, createRouter } from '@tanstack/react-router';
+import { ConvexProvider, ConvexReactClient } from 'convex/react';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 
@@ -15,13 +16,17 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL as string);
+
 // Render the app
 const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />
+      <ConvexProvider client={convex}>
+        <RouterProvider router={router} />
+      </ConvexProvider>
     </StrictMode>,
   );
 }
