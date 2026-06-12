@@ -6,17 +6,19 @@
     "#/*": "./src/*"
   },
   "scripts": {
-    "dev": "vite dev --port 3000",
-    "generate-routes": "tsr generate",
     "build": "vite build",
-    "preview": "vite preview",
-    "test": "vitest run",
-    "post-cta-init": "pnpm dlx create-db@latest --user-agent tanstack/tsrouter",
     "db:generate": "dotenv -e .env.local -- prisma generate",
-    "db:push": "dotenv -e .env.local -- prisma db push",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev",
+    "db:push": "dotenv -e .env.local -- prisma db push",
+    "db:seed": "dotenv -e .env.local -- prisma db seed",
     "db:studio": "dotenv -e .env.local -- prisma studio",
-    "db:seed": "dotenv -e .env.local -- prisma db seed"
+    "dev": "vite dev --port 3000",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "generate-routes": "tsr generate",
+    "post-cta-init": "pnpm dlx create-db@latest --user-agent tanstack/tsrouter",
+    "preview": "vite preview",
+    "test": "vitest run"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.2",
@@ -49,6 +51,7 @@
     "babel-plugin-react-compiler": "^1.0.0",
     "dotenv-cli": "^11.0.0",
     "jsdom": "^28.1.0",
+    "oxfmt": "^0.54.0",
     "tsx": "^4.21.0",
     "typescript": "^6.0.2",
     "vite": "^8.0.0",
