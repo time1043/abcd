@@ -16,9 +16,5 @@
   "routerOnly": false,
   "version": 1,
   "framework": "react",
-  "chosenAddOns": [
-    "nitro",
-    "prisma",
-    "compiler"
-  ]
+  "chosenAddOns": ["nitro", "prisma", "compiler"]
 }
