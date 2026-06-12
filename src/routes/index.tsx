@@ -1,3 +1,4 @@
+import { Button } from '#/components/ui/button';
 import { createFileRoute } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/')({
@@ -11,6 +12,8 @@ function RouteComponent() {
       <p className="mt-4 text-lg">
         Edit <code>src/routes/index.tsx</code> to get started.
       </p>
+
+      <Button className="mt-4">Click me</Button>
     </div>
   );
 }
