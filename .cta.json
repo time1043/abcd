@@ -18,7 +18,8 @@
   "framework": "react",
   "chosenAddOns": [
     "nitro",
+    "compiler",
     "prisma",
-    "compiler"
+    "shadcn"
   ]
 }
